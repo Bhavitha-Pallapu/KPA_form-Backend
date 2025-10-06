@@ -1,6 +1,6 @@
 # Railway Maintenance Forms
 
-> A Django-powered REST API backend for managing railway maintenance forms with comprehensive validation, PostgreSQL integration, and optional monitoring.
+> A Django-based REST API backend for managing railway maintenance forms, featuring robust validation and seamless PostgreSQL integration.
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
 [![Django](https://img.shields.io/badge/Django-5.2.4-green.svg)](https://djangorestframework.org)

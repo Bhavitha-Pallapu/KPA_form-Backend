@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "1d816291-53d3-4da0-8f00-89cb4491bd06",
+		"name": "Railway_Maintenance_Forms_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49018053",
+		"_collection_link": "https://pallapubhavitha824-2399929.postman.co/workspace/bhavitha-pallapu's-Workspace~3b86682e-48e9-41c4-82f3-ac2bcf50acdd/collection/49018053-1d816291-53d3-4da0-8f00-89cb4491bd06?action=share&source=collection_link&creator=49018053"
+	},
+	"item": [
+		{
+			"name": "Bogie Checksheet",
+			"item": [
+				{
+					"name": "Submit Bogie Checksheet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"bmbcChecksheet\": {\n    \"adjustingTube\": \"DAMAGED\",\n    \"cylinderBody\": \"WORN OUT\",\n    \"pistonTrunnion\": \"GOOD\",\n    \"plungerSpring\": \"GOOD\"\n  },\n  \"bogieChecksheet\": {\n    \"axleGuide\": \"Worn\",\n    \"bogieFrameCondition\": \"Good\",\n    \"bolster\": \"Good\",\n    \"bolsterSuspensionBracket\": \"Cracked\",\n    \"lowerSpringSeat\": \"Good\"\n  },\n  \"bogieDetails\": {\n    \"bogieNo\": \"BG1234\",\n    \"dateOfIOH\": \"2025-07-01\",\n    \"deficitComponents\": \"None\",\n    \"incomingDivAndDate\": \"NR / 2025-06-25\",\n    \"makerYearBuilt\": \"RDSO/2018\"\n  },\n  \"formNumber\": \"BOGIE-2025-001\",\n  \"inspectionBy\": \"user_id_456\",\n  \"inspectionDate\": \"2025-07-03\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/forms/bogie-checksheet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"forms",
+								"bogie-checksheet"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wheel Specifications",
+			"item": [
+				{
+					"name": "Submit Wheel Specification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fields\": {\n    \"axleBoxHousingBoreDia\": \"280 (+0.030/+0.052)\",\n    \"bearingSeatDiameter\": \"130.043 TO 130.068\",\n    \"condemningDia\": \"825 (800-900)\",\n    \"intermediateWWP\": \"20 TO 28\",\n    \"lastShopIssueSize\": \"837 (800-900)\",\n    \"rollerBearingBoreDia\": \"130 (+0.0/-0.025)\",\n    \"rollerBearingOuterDia\": \"280 (+0.0/-0.035)\",\n    \"rollerBearingWidth\": \"93 (+0/-0.250)\",\n    \"treadDiameterNew\": \"915 (900-1000)\",\n    \"variationSameAxle\": \"0.5\",\n    \"variationSameBogie\": \"5\",\n    \"variationSameCoach\": \"13\",\n    \"wheelDiscWidth\": \"127 (+4/-0)\",\n    \"wheelGauge\": \"1600 (+2,-1)\",\n    \"wheelProfile\": \"29.4 Flange Thickness\"\n  },\n  \"formNumber\": \"WHEEL-2025-001\",\n  \"submittedBy\": \"user_id_123\",\n  \"submittedDate\": \"2025-07-03\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/forms/wheel-specifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"forms",
+								"wheel-specifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Wheel Specifications (with filters)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/forms/wheel-specifications/list?submittedBy=user_id_122",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"forms",
+								"wheel-specifications",
+								"list"
+							],
+							"query": [
+								{
+									"key": "submittedBy",
+									"value": "user_id_122"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
