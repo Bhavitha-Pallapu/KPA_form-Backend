@@ -1,0 +1,20 @@
+# Byte-compiled / optimized
+__pycache__/
+
+# Unit tests
+.cache
+.pytest_cache/
+
+
+# Django stuff:
+local_settings.py
+db.sqlite3
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
