@@ -6,8 +6,6 @@
 [![Django](https://img.shields.io/badge/Django-5.2.4-green.svg)](https://djangorestframework.org)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue.svg)](https://postgresql.org)
 [![Docker](https://img.shields.io/badge/Docker-Containerized-blue.svg)](https://docker.com)
-[![Monitoring](https://img.shields.io/badge/Monitoring-Enabled-lightgrey.svg)]()
-[!-- AWS badge removed --]
 
 ---
 ## 🎥 Video Tutorials
@@ -15,8 +13,7 @@
 | Tutorial | Link | Description |
 |----------|------|-------------|
 | 🚀 **Setup & Development** | [Watch Now](https://drive.google.com/file/d/17QCv4pfbuGwF-YY-i1CHJYKyUKcSJ8ya/view?usp=sharing) | Initial setup, configuration & API testing |
-| 🐳 **Docker Deployment** | [Watch Now](https://drive.google.com/file/d/1pbGgeTAep39GuDYdNK1tmojN1PWTQ1Fv/view?usp=drive_link) | Containerization and logging |
-| 📊 **Monitoring Overview** | [Watch Now](https://drive.google.com/file/d/1pbGgeTAep39GuDYdNK1tmojN1PWTQ1Fv/view?usp=drive_link) | Real-time monitoring & log analytics setup |
+
 ---
 
 ## Overview
@@ -179,7 +176,6 @@ railway-maintenance-forms/
 │   ├──  views.py                    # API view classes
 │   └──  tests.py                    # Unit tests
 ├── railway_project/                 # Django project settings
-│   ├── logging_config.py            # Comprehensive logging setup
 │   ├── middleware.py                # Request/Response logging
 │   └── settings.py                  # Django configuration
 # Runtime log files are not stored in the repository; any local
@@ -229,7 +225,7 @@ railway-maintenance-forms/
   },
   "formNumber": "WHEEL-2025-001",
   "submittedBy": "user_id_123",
-  "submittedDate": "2025-07-03"
+  "submittedDate": "2025-10-05"
 }
 ```
 
@@ -242,7 +238,7 @@ railway-maintenance-forms/
     "formNumber": "WHEEL-2025-001",
     "status": "Saved",
     "submittedBy": "user_id_123",
-    "submittedDate": "2025-07-03"
+  "submittedDate": "2025-10-05"
   }
 }
 ```
@@ -275,7 +271,7 @@ railway-maintenance-forms/
   },
   "formNumber": "BOGIE-2025-001",
   "inspectionBy": "user_id_456",
-  "inspectionDate": "2025-07-03"
+  "inspectionDate": "2025-10-06"
 }
 ```
 
@@ -291,7 +287,7 @@ railway-maintenance-forms/
     {
       "formNumber": "WHEEL-2025-001",
       "submittedBy": "user_id_123",
-      "submittedDate": "2025-07-03",
+      "submittedDate": "2025-10-06",
       "fields": {
         "axleBoxHousingBoreDia": "280 (+0.030/+0.052)",
         "bearingSeatDiameter": "130.043 TO 130.068"
@@ -301,90 +297,6 @@ railway-maintenance-forms/
   ]
 }
 ```
-
-
----
-**Monitoring & Logging**
-
-The project includes structured JSON logging and request/response middleware. Integration with a monitoring provider (APM/log aggregation) is optional — add your preferred provider and configuration if needed.
-
-### Log Categories
-
-| Log Type | File | Description |
-|----------|------|-------------|
-| **General** | `django.log` | Django framework logs |
-| **Requests** | `requests.log` | HTTP request/response logs |
-| **API** | `api.log` | Application-specific logs |
-| **Database** | `database.log` | Database query logs |
-| **Errors** | `errors.log` | Error and exception logs |
-
----
-
-
-## 🌩️ AWS Deployment
-
-### Infrastructure Setup
-
-```bash
-# 1. Launch EC2 instance
-aws ec2 run-instances \
-  --image-id ami-0abcdef1234567890 \
-  --count 1 \
-  --instance-type t3.medium \
-  --key-name your-key-pair \
-  --security-groups web-server-sg
-
-# 2. Create RDS PostgreSQL instance
-aws rds create-db-instance \
-  --db-instance-identifier railway-forms-db \
-  --db-instance-class db.t3.micro \
-  --engine postgres \
-  --master-username admin \
-  --master-user-password your-secure-password \
-  --allocated-storage 20
-```
-
-### Deployment Steps
-
-1. **Configure Security Groups**
-   - Allow HTTP/HTTPS traffic (ports 80, 443)
-   - Allow SSH access (port 22)
-   - Configure RDS security group for PostgreSQL (port 5432)
-  - Allow monitoring agent communication if you run an external agent (e.g., ports 8125, 8126)
-
-2. **Environment Setup**
-   ```bash
-   # SSH into EC2 instance
-   ssh -i your-key.pem ec2-user@your-ec2-ip
-   
-   # Install Docker
-   sudo yum update -y
-   sudo yum install -y docker
-   sudo systemctl start docker
-   
-  # Deploy application
-   git clone <your-repo>
-  cd railway-maintenance-forms
-   docker-compose up -d
-   ```
-
-3. **Production Environment Variables**
-   ```bash
-   # .env configuration for production
-   DEBUG=False
-   SECRET_KEY=your-production-secret-key
-   ALLOWED_HOSTS=your-domain.com,your-ec2-ip
-   
-   # Database Configuration
-   DB_HOST=your-rds-endpoint.amazonaws.com
-  DB_NAME=railway_forms_db
-   DB_USER=admin
-   DB_PASSWORD=your-secure-password
-   DB_PORT=5432
-   
-  # Monitoring configuration (optional)
-  # Add your monitoring provider API keys here if you're using one.
-   ```
 
 ---
 
@@ -411,7 +323,6 @@ coverage report
 - **🔗 Integration Tests** - API endpoint testing  
 - **📊 Data Validation Tests** - Form field validation
 - **🔒 Authentication Tests** - Security validation
-- **🖥️ Monitoring Tests** - Logging and metrics validation
 
 ---
 
@@ -420,7 +331,6 @@ coverage report
 | Resource | Link | Description |
 |----------|------|-------------|
 | 📮 **Postman Collection** | [Download](https://drive.google.com/file/d/1-A6R_Paf6DYv2s4L8zza_fCkPygGduqf/view) | Complete API testing collection |
-| 📊 **Monitoring Dashboard** | [View Dashboard](#) | Production monitoring dashboard (provider-specific)
 
 ---
 
@@ -483,7 +393,7 @@ flake8  # Code linting
 ## 📞 Support & Contributing
 
 ### Getting Help
-- 📧 **Email**: saikrishnadandu9@gmail.com
+- 📧 **Email**: bhavithapallapu@gmail.com
 -- 📊 **Monitoring**: Check your monitoring provider dashboard for system health
 
 ### Code Style
@@ -502,7 +412,6 @@ flake8  # Code linting
 - ✅ Basic form submission APIs
 - ✅ PostgreSQL integration
 - ✅ Docker containerization
-- ✅ Monitoring integration available (provider-agnostic)
-- ✅ AWS deployment guide
+
 
 
