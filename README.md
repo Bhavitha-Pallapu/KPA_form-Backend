@@ -13,7 +13,7 @@
 
 | Resource | Link | Description |
 |----------|------|-------------|
-| 🚀 **Setup & Development Guide** | [Watch Now]() | Complete walkthrough: initial setup, configuration & API testing |
+| 🚀 **Setup & Development Guide** | [Watch Now](https://drive.google.com/file/d/1QYtqLysoSP1TfIK_KsntVHzsXmX8Z4T9/view?usp=sharing) | Complete walkthrough: initial setup, configuration & API testing |
 | 📮 **Postman Collection** | [Download](https://drive.google.com/file/d/1ufnS8cfllRbqiyIpEXSvQQIn6u4Rlr1p/view?usp=sharing) | Ready-to-use API testing collection with all endpoints |
 
 ---
