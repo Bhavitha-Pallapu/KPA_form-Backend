@@ -6,7 +6,8 @@
 [![Django](https://img.shields.io/badge/Django-5.2.4-green.svg)](https://djangorestframework.org)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-12+-blue.svg)](https://postgresql.org)
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://docker.com)
-
+[![AWS](https://img.shields.io/badge/AWS-Cloud%20Services-orange.svg)](https://aws.amazon.com)
+[![Datadog](https://img.shields.io/badge/Datadog-Monitoring-purple.svg)](https://www.datadoghq.com)
 ---
 
 ## 🎥 Video Tutorial & Resources
